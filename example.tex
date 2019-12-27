@@ -64,17 +64,17 @@
   3 color series to be used in publicity materials
   \begin{itemize}
   \item Green\\
-    \tikz \fill [nudt-a01] (0,0) rectangle (10pt, 10pt);
-    \tikz \fill [nudt-a02] (0,0) rectangle (10pt, 10pt);
-    \tikz \fill [nudt-a03] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudtcolora01] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudtcolora02] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudtcolora03] (0,0) rectangle (10pt, 10pt);
   \item Yellow\\
-    \tikz \fill [nudt-b01] (0,0) rectangle (10pt, 10pt);
-    \tikz \fill [nudt-b02] (0,0) rectangle (10pt, 10pt);
-    \tikz \fill [nudt-b03] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudtcolorb01] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudtcolorb02] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudtcolorb03] (0,0) rectangle (10pt, 10pt);
   \item Golden\\
-    \tikz \fill [nudt-b01] (0,0) rectangle (10pt, 10pt);
-    \tikz \fill [nudt-b02] (0,0) rectangle (10pt, 10pt);
-    \tikz \fill [nudt-b03] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudtcolorb01] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudtcolorb02] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudtcolorb03] (0,0) rectangle (10pt, 10pt);
   \end{itemize}
 \end{frame}
 
@@ -95,7 +95,10 @@
     \foreach \p [count=\j] in {100,90,...,10} {
       \node [header] at (0.5,-.5-\j) {\p\%};
     }
-    \foreach \c [count=\i] in {nudt-a01,nudt-a02,nudt-a03,nudt-b01,nudt-b02,nudt-b03,nudt-c01,nudt-c02,nudt-c03} {
+    \foreach \c [count=\i] in {
+      nudtcolora01,nudtcolora02,nudtcolora03,
+      nudtcolorb01,nudtcolorb02,nudtcolorb03,
+      nudtcolorc01,nudtcolorc02,nudtcolorc03} {
       \foreach \p [count=\j] in {100,90,...,10} {
         \fill [\c!\p!white] (\i,-1-\j) rectangle +(.9,1);
       }
@@ -120,7 +123,10 @@
     \foreach \p [count=\j] in {100,90,...,10} {
       \node [header] at (0.5,-.5-\j) {\p\%};
     }
-    \foreach \c [count=\i] in {nudt-a01,nudt-a02,nudt-a03,nudt-b01,nudt-b02,nudt-b03,nudt-c01,nudt-c02,nudt-c03} {
+    \foreach \c [count=\i] in {
+      nudtcolora01,nudtcolora02,nudtcolora03,
+      nudtcolorb01,nudtcolorb02,nudtcolorb03,
+      nudtcolorc01,nudtcolorc02,nudtcolorc03} {
       \foreach \p [count=\j] in {100,90,...,10} {
         \fill [\c!\p!black] (\i,-1-\j) rectangle +(.9,1);
       }
@@ -137,13 +143,13 @@
     the \texttt{\textbackslash{}definecolor} command provided
     by \texttt{xcolor}
     \begin{itemize}
-    \item \verb!\definecolor{nudt-a01}{RGB}{25, 83, 51}!
-    \item \verb!\definecolor{nudt-b01}{RGB}{230, 216, 50}!
+    \item \verb!\definecolor{nudtcolora01}{RGB}{25, 83, 51}!
+    \item \verb!\definecolor{nudtcolorb01}{RGB}{230, 216, 50}!
     \end{itemize}
   \item Users can use these colors for typesetting
     \begin{itemize}
-      \item \verb!{\color{nudt-b01}yellow}!$\rightarrow$ {\color{nudt-b01}yellow}
-      \item \verb!{\color{nudt-a01!!\verb!70}light green}!$\rightarrow$ {\color{nudt-a01!70}light green}
+      \item \verb!{\color{nudtcolorb01}yellow}!$\rightarrow$ {\color{nudtcolorb01}yellow}
+      \item \verb!{\color{nudtcolora01!!\verb!70}light green}!$\rightarrow$ {\color{nudtcolora01!70}light green}
     \end{itemize}
   \end{itemize}
 \end{frame}
