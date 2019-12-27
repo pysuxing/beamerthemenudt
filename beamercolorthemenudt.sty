@@ -1,0 +1,188 @@
+% Copyright 2019 by Su Xing
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\mode<presentation>
+
+% Colors picked from the NUDT website
+\definecolor{NUDTDarkGreen}{RGB}{2, 59, 35}
+\definecolor{NUDTDeepGreen}{RGB}{15, 80, 53}
+\definecolor{NUDTGreen}{RGB}{20, 117, 61}
+\definecolor{NUDTWhiteGreen}{RGB}{207, 220, 214}
+
+%% Colors defined by the NUDT Visual Image Recognition System
+%% green
+\definecolor{nudt-a01}{RGB}{25, 83, 51}
+\definecolor{nudt-a02}{RGB}{33, 77, 72}
+\definecolor{nudt-a03}{RGB}{31, 52, 31}
+%% yellow
+\definecolor{nudt-b01}{RGB}{230, 216, 50}
+\definecolor{nudt-b02}{RGB}{222, 191, 18}
+\definecolor{nudt-b03}{RGB}{233, 230, 59}
+%% golden
+\definecolor{nudt-c01}{RGB}{161, 140, 77}
+\definecolor{nudt-c02}{RGB}{189, 165, 30}
+\definecolor{nudt-c03}{RGB}{184, 146, 26}
+
+%% structure
+\setbeamercolor{structure}{fg=nudt-a03}
+
+%% meta
+\setbeamercolor{author}{}
+\setbeamercolor{institute}{}
+\setbeamercolor{date}{}
+\setbeamercolor{logo}{}
+
+%% titles
+\setbeamercolor{titlelike}{parent=structure}
+\setbeamercolor{title}{parent=titlelike, fg=nudt-a01}
+\setbeamercolor{subtitle}{parent=title}
+\setbeamercolor{part title}{parent=titlelike, fg=parent.fg!90}
+\setbeamercolor{sectiontitle}{parent=titlelike, fg=parent.fg!80}
+\setbeamercolor{subsectiontitle}{parent=titlelike, fg=parent.fg!70}
+\setbeamercolor{frametitle}{parent=titlelike, fg=nudt-a01}
+\setbeamercolor{frametitle right}{parent=frametitle}
+\setbeamercolor{framesubtitle}{parent=frametitle, fg=parent.fg!80}
+
+%% toc
+\setbeamercolor{section in toc}{fg=nudt-a02}
+\setbeamercolor{subsection in toc}{fg=nudt-a02!80}
+\setbeamercolor{subsubsection in toc}{fg=nudt-a02!60}
+\setbeamercolor{section in toc shaded}{parent=section in toc, fg=parent.fg!80}
+\setbeamercolor{subsection in toc shaded}{parent=subsection in toc, fg=parent.fg!80}
+\setbeamercolor{subsubsection in toc shaded}{parent=subsubsection in toc, fg=parent.fg!80}
+
+%% palette
+\setbeamercolor{palette quaternary}{fg=nudt-a01!5}
+\setbeamercolor{palette tertiary}{parent=palette quaternary, fg=nudt-a01!10}
+\setbeamercolor{palette secondary}{parent=palette quaternary, fg=nudt-a01!15}
+\setbeamercolor{palette primary}{parent=palette quaternary, fg=nudt-a01!20}
+\setbeamercolor{palette sidebar quaternary}{fg=nudt-a01!5}
+\setbeamercolor{palette sidebar tertiary}{parent=palette sidebar quaternary, fg=nudt-a01!10}
+\setbeamercolor{palette sidebar secondary}{parent=palette sidebar quaternary, fg=nudt-a01!15}
+\setbeamercolor{palette sidebar primary}{parent=palette sidebar quaternary, fg=nudt-a01!20}
+
+%% misc
+\setbeamercolor{titlegraphic}{}
+\setbeamercolor{part name}{}
+\setbeamercolor{section name}{}
+\setbeamercolor{subsection name}{}
+\setbeamercolor{section number projected}{parent=item projected}
+\setbeamercolor{subsection number projected}{parent=subitem projected}
+\setbeamercolor{subsubsection number projected}{parent=subsubitem projected}
+
+%% text
+\setbeamercolor{normal text}{fg=black, bg=}
+\setbeamercolor{alerted text}{parent=normal text, fg=red}
+\setbeamercolor{example text}{parent=normal text, fg=NUDTGreen}
+
+%% math text
+\setbeamercolor{math text}{}
+\setbeamercolor{math text inlined}{parent=math text}
+\setbeamercolor{math text displayed}{parent=math text}
+\setbeamercolor{normal text in math text}{}
+
+%% caption
+\setbeamercolor{caption}{parent=structure}
+\setbeamercolor{caption name}{parent=structure}
+
+%% background
+\setbeamercolor{background canvas}{parent=normal text}
+\setbeamercolor{background}{parent=background canvas}
+
+%% local structure
+\setbeamercolor{local structure}{parent=structure}
+\setbeamercolor{item}{parent=local structure}
+\setbeamercolor{subitem}{parent=item}
+\setbeamercolor{subsubitem}{parent=subitem}
+\setbeamercolor{item projected}{parent=item,use=item,fg=white,bg=item.fg}
+\setbeamercolor{subitem projected}{parent=item projected}
+\setbeamercolor{subsubitem projected}{parent=subitem projected}
+\setbeamercolor{enumerate item}{parent=item}
+\setbeamercolor{enumerate subitem}{parent=subitem}
+\setbeamercolor{enumerate subsubitem}{parent=subsubitem}
+\setbeamercolor{itemize item}{parent=item}
+\setbeamercolor{itemize subitem}{parent=subitem}
+\setbeamercolor{itemize subsubitem}{parent=subsubitem}
+\setbeamercolor{itemize/enumerate body}{}
+\setbeamercolor{itemize/enumerate subbody}{}
+\setbeamercolor{itemize/enumerate subsubbody}{}
+\setbeamercolor{description item}{parent=item}
+\setbeamercolor{description body}{}
+
+%% links
+\setbeamercolor{button}{use=local structure,bg=local structure.fg!50!bg,fg=white}
+\setbeamercolor{button border}{use=button,fg=button.bg}
+\setbeamercolor{navigation symbols}{use=structure,fg=structure.fg!40!bg}
+\setbeamercolor{navigation symbols dimmed}{use=structure,fg=structure.fg!20!bg}
+\setbeamercolor{mini frame}{parent=section in head/foot}
+
+%% block
+\setbeamercolor{block body}{}
+\setbeamercolor{block body alerted}{}
+\setbeamercolor{block body example}{}
+\setbeamercolor{block title}{parent=structure}
+\setbeamercolor{block title alerted}{parent=alerted text}
+\setbeamercolor{block title example}{parent=example text}
+
+%% bibliography
+\setbeamercolor{bibliography item}{parent=item}
+\setbeamercolor{bibliography entry author}{use=structure,fg=structure.fg}
+\setbeamercolor{bibliography entry title}{use=normal text,fg=normal text.fg}
+\setbeamercolor{bibliography entry location}{use=structure,fg=structure.fg!65!bg}
+\setbeamercolor{bibliography entry note}{use=structure,fg=structure.fg!65!bg}
+
+%% note
+\setbeamercolor{note page}{bg=white!90!black, fg=black}
+\setbeamercolor{note title}{bg=white!80!black, fg=black}
+\setbeamercolor{note date}{parent=note title}
+
+%% head/foot
+\setbeamercolor{title in head/foot}{parent=palette quaternary}
+\setbeamercolor{author in head/foot}{parent=palette tertiary}
+\setbeamercolor{institute in head/foot}{parent=palette tertiary}
+\setbeamercolor{date in head/foot}{parent=palette tertiary}
+\setbeamercolor{section in head/foot}{parent=palette secondary}
+\setbeamercolor{subsection in head/foot}{parent=palette primary}
+\setbeamercolor{subsubsection in head/foot}{parent=subsection in head/foot}
+\setbeamercolor{page number in head/foot}{parent=palette secondary}
+\setbeamercolor{headline}{}
+\setbeamercolor{footline}{}
+\setbeamercolor{separation line}{}
+\setbeamercolor{upper separation line head}{parent=separation line}
+\setbeamercolor{middle separation line head}{parent=separation line}
+\setbeamercolor{lower separation line head}{parent=separation line}
+\setbeamercolor{upper separation line foot}{parent=separation line}
+\setbeamercolor{middle separation line foot}{parent=separation line}
+\setbeamercolor{lower separation line foot}{parent=separation line}
+
+%% sidebar
+\setbeamercolor{sidebar}{bg=nudt-a01}
+\setbeamercolor{sidebar left}{parent=sidebar}
+\setbeamercolor{sidebar right}{parent=sidebar}
+\setbeamercolor{title in sidebar}{parent=palette sidebar quaternary}
+\setbeamercolor{author in sidebar}{parent=palette sidebar tertiary}
+\setbeamercolor{institute in sidebar}{parent=palette sidebar tertiary}
+\setbeamercolor{date in sidebar}{parent=palette sidebar tertiary}
+\setbeamercolor{section in sidebar}{parent=palette sidebar secondary}
+\setbeamercolor{subsection in sidebar}{parent=palette sidebar primary}
+\setbeamercolor{subsubsection in sidebar}{parent=subsection in sidebar}
+\setbeamercolor{section in sidebar shaded}{use=section in sidebar,fg=section in sidebar.fg!40!bg}
+\setbeamercolor{subsection in sidebar shaded}{use=subsection in sidebar,fg=subsection in sidebar.fg!40!bg}
+\setbeamercolor{subsubsection in sidebar shaded}{parent=subsection in sidebar shaded}
+
+%% misc
+\setbeamercolor{abstract}{}
+\setbeamercolor{abstract title}{parent=structure}
+\setbeamercolor{verse}{}
+\setbeamercolor{quotation}{}
+\setbeamercolor{quote}{parent=quotation}
+\setbeamercolor{qed symbol}{parent=structure}
+
+\mode
+<all>

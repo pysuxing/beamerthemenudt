@@ -1,0 +1,34 @@
+% Copyright 2019 by Su Xing
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+% \PassOptionsToPackage{right}{beamerouterthemesidebar}
+% \PassOptionsToPackage{width=2cm}{beamerouterthemesidebar}
+
+% \DeclareOptionBeamer{hideothersubsections}{\PassOptionsToPackage{hideothersubsections=#1}{beamerouterthemesidebar}}
+% \DeclareOptionBeamer{hideallsubsections}{\PassOptionsToPackage{hideallsubsections=#1}{beamerouterthemesidebar}}
+
+% \DeclareOptionBeamer{width}{\PassOptionsToPackage{width=#1}{beamerouterthemesidebar}}
+% \DeclareOptionBeamer{left}{\PassOptionsToPackage{left}{beamerouterthemesidebar}}
+% \DeclareOptionBeamer{right}{\PassOptionsToPackage{right}{beamerouterthemesidebar}}
+% \ProcessOptionsBeamer
+
+\mode<presentation>
+
+\usecolortheme{nudt}
+
+\useoutertheme[hideothersubsections,height=0pt]{sidebar}
+
+%% \setbeamertemplate{sidebar canvas \beamer@sidebarside}[vertical shading][top=nudt-a01,bottom=nudt-a01!80]
+
+\logo{\includegraphics[width=.8\beamer@sidebarwidth]{logo/nudt-small1.png}}
+\addtobeamertemplate{sidebar \beamer@sidebarside}{
+    \vspace{.1\beamer@sidebarwidth}\hspace{.1\beamer@sidebarwidth}\insertlogo}{}
+
+\mode
+<all>

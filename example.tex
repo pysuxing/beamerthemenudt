@@ -1,0 +1,208 @@
+\documentclass{beamer}
+
+%\usepackage{pgfpages}
+%\setbeameroption{show notes on second screen}
+%% \setbeameroption{show notes}
+\usetheme{nudt}
+%\usecolortheme[RGB={02,59,35}]{structure}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix, calc}
+\usepackage{tikz-3dplot}
+
+% Author, Title, etc.
+
+\title[NUDT Beamer Theme] 
+{%
+  The NUDT Beamer Theme
+}
+\subtitle{An Example}
+
+\author[Su Xing]
+{
+  Su Xing\\
+  xingsu@nudt.edu.cn
+}
+
+\institute[NUDT]
+{
+  College of Meteorology and Oceanography\\
+  National University of Defence Technology
+}
+
+\date[2019]{\today}
+
+% The main document
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Overview}
+
+\begin{frame}
+  \frametitle{The NUDT Beamer Theme}
+  The NUDT beamer theme consists of two components
+  \begin{itemize}
+  \item The NUDT color theme
+  \item The NUDT inner theme
+  \end{itemize}
+\end{frame}
+
+\section[Color Theme]{The NUDT Color Theme}
+
+\subsection[NUDT VIRS]{The NUDT Visual Image Recognition System}
+
+\begin{frame}
+  \frametitle{The NUDT Visual Image Recognition System}
+  The NUDT Visual Image Recognition System (VIRS) recommends
+  3 color series to be used in publicity materials
+  \begin{itemize}
+  \item Green\\
+    \tikz \fill [nudt-a01] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudt-a02] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudt-a03] (0,0) rectangle (10pt, 10pt);
+  \item Yellow\\
+    \tikz \fill [nudt-b01] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudt-b02] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudt-b03] (0,0) rectangle (10pt, 10pt);
+  \item Golden\\
+    \tikz \fill [nudt-b01] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudt-b02] (0,0) rectangle (10pt, 10pt);
+    \tikz \fill [nudt-b03] (0,0) rectangle (10pt, 10pt);
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{NUDT VIRS Colors}
+  \framesubtitle{Mixed with White}
+  \begin{tikzpicture}[x=2.7em,y=1em,
+      header/.style={font=\fontsize{8}{8}\selectfont},
+      rgb/.style={font=\fontsize{5}{5}\selectfont}]
+    \node [header] at (.5,.5) {Color};
+    \foreach \name [count=\i] in {A01,A02,A03,B01,B02,B03,C01,C02,C03} {
+      \node [header] (\name) at (0.5+\i, 0.5) {\name};
+    }
+    \node [header] at (.5,-.5) {RGB};
+    \foreach \rgb [count=\i] in {195333,214D48,1F341F,E6D832,DEBF12,E9E63B,A18C4D,BDA51E,B8921A} {
+      \node [rgb] (\rgb) at (0.5+\i, -0.5) {\#\rgb};
+    }
+    \foreach \p [count=\j] in {100,90,...,10} {
+      \node [header] at (0.5,-.5-\j) {\p\%};
+    }
+    \foreach \c [count=\i] in {nudt-a01,nudt-a02,nudt-a03,nudt-b01,nudt-b02,nudt-b03,nudt-c01,nudt-c02,nudt-c03} {
+      \foreach \p [count=\j] in {100,90,...,10} {
+        \fill [\c!\p!white] (\i,-1-\j) rectangle +(.9,1);
+      }
+    }
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \frametitle{NUDT VIRS Colors}
+  \framesubtitle{Mixed with Black}
+  \begin{tikzpicture}[x=2.7em,y=1em,
+      header/.style={font=\fontsize{8}{8}\selectfont},
+      rgb/.style={font=\fontsize{5}{5}\selectfont}]
+    \node [header] at (.5,.5) {Color};
+    \foreach \name [count=\i] in {A01,A02,A03,B01,B02,B03,C01,C02,C03} {
+      \node [header] (\name) at (0.5+\i, 0.5) {\name};
+    }
+    \node [header] at (.5,-.5) {RGB};
+    \foreach \rgb [count=\i] in {195333,214D48,1F341F,E6D832,DEBF12,E9E63B,A18C4D,BDA51E,B8921A} {
+      \node [rgb] (\rgb) at (0.5+\i, -0.5) {\#\rgb};
+    }
+    \foreach \p [count=\j] in {100,90,...,10} {
+      \node [header] at (0.5,-.5-\j) {\p\%};
+    }
+    \foreach \c [count=\i] in {nudt-a01,nudt-a02,nudt-a03,nudt-b01,nudt-b02,nudt-b03,nudt-c01,nudt-c02,nudt-c03} {
+      \foreach \p [count=\j] in {100,90,...,10} {
+        \fill [\c!\p!black] (\i,-1-\j) rectangle +(.9,1);
+      }
+    }
+  \end{tikzpicture}
+\end{frame}
+
+\subsection[Usage]{Color Usage in Beamer}
+
+\begin{frame}[fragile]
+  \frametitle{Usage of NUDT VIRS Colors}
+  \begin{itemize}
+  \item The NUDT VIRS colors are assigned proper names via
+    the \texttt{\textbackslash{}definecolor} command provided
+    by \texttt{xcolor}
+    \begin{itemize}
+    \item \verb!\definecolor{nudt-a01}{RGB}{25, 83, 51}!
+    \item \verb!\definecolor{nudt-b01}{RGB}{230, 216, 50}!
+    \end{itemize}
+  \item Users can use these colors for typesetting
+    \begin{itemize}
+      \item \verb!{\color{nudt-b01}yellow}!$\rightarrow$ {\color{nudt-b01}yellow}
+      \item \verb!{\color{nudt-a01!!\verb!70}light green}!$\rightarrow$ {\color{nudt-a01!70}light green}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\section[Inner]{The NUDT Inner Theme}
+
+\begin{frame}
+  \frametitle{}
+  \framesubtitle{MMMMMMMMMMM}
+  \tdplotsetmaincoords{30}{0}
+  \begin{tikzpicture}[tdplot_main_coords]
+    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+    \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+  \end{tikzpicture}
+  \tdplotsetmaincoords{0}{30}
+  \begin{tikzpicture}[tdplot_main_coords]
+    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+    \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+  \end{tikzpicture}
+  \tdplotsetmaincoords{30}{60}
+  \begin{tikzpicture}[tdplot_main_coords]
+    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+    \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+  \end{tikzpicture}
+  \tdplotsetmaincoords{70}{110}
+  \begin{tikzpicture}[tdplot_main_coords]
+    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+    \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+    \tdplotsetthetaplanecoords{10}
+    \draw[tdplot_rotated_coords,color=blue,thick,->] (0,0,0)
+    -- (0,.5,0) node[anchor=north]{$y’$};
+    \tdplotsetthetaplanecoords{30}
+    \draw[tdplot_rotated_coords,color=red,thick,->] (0,0,0)
+    -- (0,.5,0) node[anchor=north]{$y’$};
+    \tdplotsetthetaplanecoords{45}
+    \draw[tdplot_rotated_coords,color=green,thick,->] (0,0,0)
+    -- (0,.5,0) node[anchor=north]{$y’$};
+    \tdplotsetthetaplanecoords{60}
+    \draw[tdplot_rotated_coords,color=yellow,thick,->] (0,0,0)
+    -- (0,.5,0) node[anchor=north]{$y’$};
+    \tdplotsetthetaplanecoords{80}
+    \draw[tdplot_rotated_coords,color=cyan,thick,->] (0,0,0)
+    -- (0,.5,0) node[anchor=north]{$y’$};
+  \end{tikzpicture}
+  \tdplotsetmaincoords{70}{110}
+  \begin{tikzpicture}[tdplot_main_coords]
+    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+    \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+    \tdplotsetcoord{o}{0}{0}{90}
+    \tdplotsetcoord{a}{.8}{90}{45}
+    \tdplotsetcoord{b}{.8}{45}{0}
+    \draw [color=red] (o)--(a);
+    \draw [color=blue] (o)--(b);
+  \end{tikzpicture}
+\end{frame}
+
+\end{document}
